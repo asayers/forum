@@ -1,0 +1,114 @@
+@width: 640px;
+@headline-color: #333;
+@paragraph-color: #555;
+@muted-color: #bbb;
+@self-color: #dc322f;
+@other-color: #268bd2;
+@bg-color: #fffafa;
+
+.box-shadow(@style1, @style2) {
+  box-shadow:         @style1, @style2;
+  -webkit-box-shadow: @style1, @style2;
+  -moz-box-shadow:    @style1, @style2;
+}
+
+body {
+  background-color: #fff;
+}
+
+#container {
+  background-color: @bg-color;
+  width: @width;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin: 0 auto;
+  .box-shadow(-5px 0 5px #f6f6f6, 5px 0 5px #f6f6f6);
+}
+
+header {
+  position: fixed;
+  width: @width;
+  background-color: @bg-color;
+  color: @headline-color;
+  padding-top: 1em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid grey;
+  .box-shadow(0 -10px 0 @bg-color, 0 0 0);
+  #topic_name {
+    font-size: 40px;
+    margin: 0;
+  }
+  #new_topic {
+    margin-top: 15px;
+    margin-bottom: 7px;
+    height: 15px;
+  }
+  #topic {
+//    float: left;
+  }
+  #login {
+    margin-top: 20px;
+    float: right;
+  }
+}
+
+#content {
+  padding-top: 5em;
+}
+
+footer {
+  border-top: 1px solid @muted-color;
+  margin-top: 2em;
+  font-size: 10px;
+  color: @muted-color;
+  text-align: center;
+}
+
+#listing {
+  margin-left: 5px;
+  p {
+    margin-top: 0;
+  }
+}
+
+.post {
+  .message {
+    color: @paragraph-color;
+  }
+
+  .author {
+    font-style: italic;
+  }
+  .author.self {
+    color: @self-color;
+  }
+  .author.other {
+    color: @other-color;
+  }
+
+  .timestamp {
+    float: right;
+    color: @muted-color;
+    font-size: 10px;
+  }
+}
+
+#add_post {
+  margin-top: 1em;
+  #new_post {
+    width: 620px;
+    margin-left: 5px;
+    border: 1px solid grey;
+  }
+}
+
+input {
+  font-size: 14px;
+}
+
+#cant_post {
+  background-color: #fff;
+  border: 1px solid grey;
+  color: #aaa;
+  text-align: center;
+}

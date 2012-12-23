@@ -1,0 +1,49 @@
+<head>
+  <title>Forum</title>
+</head>
+
+<body>
+  <div id="container">
+    <header>{{> heading}}</header>
+    <div id="content">
+      {{> listing}}
+      {{> add_post}}
+    </div>
+    <footer>{{> footer}}</footer>
+  </div>
+</body>
+
+<template name="heading">
+  <span id="login">{{loginButtons align="right"}}</span>
+  <span id="topic"><h1 id="topic_name">{{topic}}</h1></span>
+</template>
+
+<template name="listing">
+  <div id="listing">
+    {{#each posts}}
+      {{> post}}
+    {{/each}}
+  </div>
+</template>
+
+<template name="post">
+  <div class="post">
+    <span class="author {{ownership}}">{{author}}</span>:<span class="timestamp">{{time}}</span>
+    <span class="message">{{#markdown}}{{message}}{{/markdown}}</span>
+  </div>
+</template>
+
+<template name="add_post">
+  <div id="add_post">
+    {{#unless forbidden}}
+      <input type="text" id="new_post" placeholder="New post" />
+    {{/unless}}
+    {{#if forbidden}}
+      <div id="cant_post">{{forbidden}}</div>
+    {{/if}}
+  </div>
+</template>
+
+<template name="footer">
+  &copy; 2012 Alex Sayers
+</template>
