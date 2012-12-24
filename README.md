@@ -22,3 +22,8 @@ Meteor packages required:
 - jquery
 - showdown
 - backbone
+
+Licence
+-------
+
+BSD 2-clause. Comes with no warranties, expressed or implied.
